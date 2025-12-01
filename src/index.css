@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   /* Core Colors - Dark Purple Theme */
   --bg-dark: #0a0514;
