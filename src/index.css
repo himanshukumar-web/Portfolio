@@ -1,5 +1,5 @@
 :root {
-  /* Core Colors - Dark Purple Theme */
+  /* Core Colors - Dark Purple Theme (as requested) */
   --bg-dark: #0a0514;
   --bg-deep: #130b24;
   --primary: #8a2be2;
@@ -85,12 +85,14 @@ body {
 /* Text Gradients */
 .text-gradient {
   background: linear-gradient(135deg, #fff 0%, var(--primary-glow) 100%);
-  webkit-background-clip: text;
-  webkit-text-fill-color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .text-gradient-accent {
   background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -119,7 +121,7 @@ body {
   animation-delay: 2s;
 }
 
-/* Background Orbs */
+/* Background Orbs - 3D Floating Elements */
 .orb {
   position: fixed;
   border-radius: 50%;
