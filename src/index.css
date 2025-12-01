@@ -1,0 +1,147 @@
+:root {
+  /* Core Colors - Dark Purple Theme */
+  --bg-dark: #0a0514;
+  --bg-deep: #130b24;
+  --primary: #8a2be2;
+  --primary-glow: #a855f7;
+  --accent: #00f0ff;
+  --text-primary: #ffffff;
+  --text-secondary: rgba(255, 255, 255, 0.7);
+
+  /* Glassmorphism Tokens */
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-blur: 20px;
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+
+  /* iOS 26 Fluid Motion */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-elastic: cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Utility Classes for Glassmorphism */
+.glass-panel {
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 24px;
+}
+
+.glass-card {
+  background: linear-gradient(135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.01) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  transition: transform 0.3s var(--ease-out-expo), box-shadow 0.3s var(--ease-out-expo);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(138, 43, 226, 0.2);
+  border-color: var(--primary-glow);
+}
+
+/* Text Gradients */
+.text-gradient {
+  background: linear-gradient(135deg, #fff 0%, var(--primary-glow) 100%);
+  webkit-background-clip: text;
+  webkit-text-fill-color: transparent;
+}
+
+.text-gradient-accent {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Floating Animation Keyframes */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 8s ease-in-out infinite;
+  animation-delay: 2s;
+}
+
+/* Background Orbs */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.6;
+}
+
+.orb-1 {
+  top: -10%;
+  left: -10%;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
+  animation: float 10s ease-in-out infinite alternate;
+}
+
+.orb-2 {
+  bottom: -10%;
+  right: -10%;
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, var(--accent) 0%, transparent 70%);
+  animation: float 12s ease-in-out infinite alternate-reverse;
+}
