@@ -1,5 +1,5 @@
 :root {
-  /* Core Colors - Dark Purple Theme (as requested) */
+  /* Core Colors - Dark Purple Theme */
   --bg-dark: #0a0514;
   --bg-deep: #130b24;
   --primary: #8a2be2;
@@ -121,7 +121,7 @@ body {
   animation-delay: 2s;
 }
 
-/* Background Orbs - 3D Floating Elements */
+/* Background Orbs */
 .orb {
   position: fixed;
   border-radius: 50%;
